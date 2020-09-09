@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Icon from 'react-native-vector-icons/Feather';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { 
   Container, 
@@ -55,9 +55,15 @@ function SignIn() {
       <SocialSignIn>
         <SocialSignInText>Or sign in with</SocialSignInText>
         <SocialButtons>
-          <SocialButton />
-          <SocialButton />
-          <SocialButton />
+          <SocialButton>
+            <Icon name="google" size={32} color="#CF2C1F" />
+          </SocialButton>
+          <SocialButton>
+            <Icon name="facebook" size={32} color="#395693" />
+          </SocialButton>
+          <SocialButton>
+            <Icon name="twitter" size={32} color="#1C9CEB" />
+          </SocialButton>
         </SocialButtons>
       </SocialSignIn>
     </Container>

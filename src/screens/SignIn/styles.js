@@ -13,8 +13,8 @@ export const Title = styled.Text`
 `;
 
 export const Content = styled.View`
-  flex: 1;
   width: 100%;
+  margin-bottom: 60px;
 `;
 
 export const ContentDescription = styled.Text`
@@ -38,13 +38,14 @@ export const SignInButtonText = styled.Text`
 `;
 
 export const SocialSignIn = styled.View`
+  flex: 1;
   align-items: center;
   width: 100%;
 `;
 
 export const SocialSignInText = styled.Text`
   font-size: 12px;
-  color: #666;
+  color: #444466;
   margin-bottom: 16px;
 `;
 
