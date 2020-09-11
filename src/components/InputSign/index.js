@@ -1,12 +1,14 @@
 import React from 'react';
 
-import { Container, Input } from './styles';
+import { Container, Input, ButtonHidden } from './styles';
 
-function InputSign({ Icon, ...attrs }) {
+function InputSign({ Icon, visibility, toggleVisibility, ...attrs }) {
   return (
     <Container>
       <Input {...attrs} />
-      {Icon}
+      <ButtonHidden onPress={() => toggleVisibility(!visibility)}>
+        {Icon}
+      </ButtonHidden>
     </Container>
   );
 }

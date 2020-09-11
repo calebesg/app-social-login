@@ -42,10 +42,16 @@ function SignIn() {
           keyboardType="email-address"
         />
         <InputSign 
-          placeholder="Senha"
+          placeholder="Password"
           value={password}
           onChangeText={setPassword}
           autoCapitalize="none"
+          Icon={!isPasswordVisible 
+            ? <Icon name="eye" size={18} color="#b1b1b8" /> 
+            : <Icon name="eye-slash" size={18} color="#4f4f5e" />
+          }
+          visibility={isPasswordVisible}
+          toggleVisibility={setIsPasswordVisible}
           autoCorrect={false}
           secureTextEntry={!isPasswordVisible}
         />
@@ -71,8 +77,8 @@ function SignIn() {
       </SocialSignIn>
 
       <Footer onPress={() => {}}>
-        <FooterText>Ainda nao tem conta?</FooterText>
-        <FooterTextBold> Cadastre-se</FooterTextBold>
+        <FooterText>Not have an account yet?</FooterText>
+        <FooterTextBold> Sign up</FooterTextBold>
       </Footer>
     </Container>
   );

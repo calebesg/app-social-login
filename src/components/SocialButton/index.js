@@ -4,7 +4,7 @@ import { Container } from './styles';
 
 function SocialButton({ children }) {
   return (
-    <Container>
+    <Container onPress={() => {}}>
       {children}
     </Container>
   );

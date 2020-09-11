@@ -23,7 +23,7 @@ function Preload() {
         translucent={true} 
       />
       <Container>
-        <Logo>social login</Logo>
+        <Logo>Social login</Logo>
         <LoadingIcon />
       </Container>
     </>

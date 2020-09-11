@@ -19,12 +19,14 @@ export const Content = styled.View`
 `;
 
 export const ContentDescription = styled.Text`
-  font-size: 14px;
-  color: #444;
+  font-size: 13px;
+  color: #606073;
   margin-bottom: 16px;
 `;
 
-export const SignInButton = styled.TouchableOpacity`
+export const SignInButton = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.8
+})`
   background-color: #1E319D;
   height: 60px;
   border-radius: 8px;
@@ -35,6 +37,7 @@ export const SignInButton = styled.TouchableOpacity`
 
 export const SignInButtonText = styled.Text`
   color: #fff;
+  font-weight: bold;
   font-size: 14px;
 `;
 
@@ -45,9 +48,9 @@ export const SocialSignIn = styled.View`
 `;
 
 export const SocialSignInText = styled.Text`
-  font-size: 12px;
-  color: #444466;
-  margin-bottom: 16px;
+  font-size: 13px;
+  color: #606073;
+  margin-bottom: 32px;
 `;
 
 export const SocialButtons = styled.View`
@@ -56,7 +59,9 @@ export const SocialButtons = styled.View`
   justify-content: space-around
 `;
 
-export const Footer = styled.TouchableOpacity`
+export const Footer = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.8
+})`
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -65,10 +70,12 @@ export const Footer = styled.TouchableOpacity`
 `;
 
 export const FooterText = styled.Text`
-  color: #444466aa;
+  color: #606073;
+  font-size: 13px;
 `;
 
 export const FooterTextBold = styled.Text`
   font-weight: bold;
+  font-size: 13px;
   color: #1E319D;
 `;
