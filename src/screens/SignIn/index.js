@@ -10,7 +10,10 @@ import {
   SignInButtonText,
   SocialSignIn,
   SocialSignInText,
-  SocialButtons
+  SocialButtons,
+  Footer,
+  FooterText,
+  FooterTextBold
 } from './styles';
 
 import InputSign from '../../components/InputSign';
@@ -25,7 +28,7 @@ function SignIn() {
   return (
     <Container>
  
-      <Title>Sign In</Title>
+      <Title>Sign in</Title>
 
       <Content>
         <ContentDescription>Login to you Account</ContentDescription>
@@ -47,7 +50,7 @@ function SignIn() {
           secureTextEntry={!isPasswordVisible}
         />
 
-        <SignInButton>
+        <SignInButton onPress={() => {}}>
           <SignInButtonText>Sign In</SignInButtonText>
         </SignInButton>
       </Content>
@@ -66,6 +69,11 @@ function SignIn() {
           </SocialButton>
         </SocialButtons>
       </SocialSignIn>
+
+      <Footer onPress={() => {}}>
+        <FooterText>Ainda nao tem conta?</FooterText>
+        <FooterTextBold> Cadastre-se</FooterTextBold>
+      </Footer>
     </Container>
   );
 }

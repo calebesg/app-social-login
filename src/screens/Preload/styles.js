@@ -9,6 +9,7 @@ export const Container = styled.View`
 
 export const Logo = styled.Text`
   font-size: 32px;
+  font-family: Lobster-Regular;
   color: #FFF;
 `;
 

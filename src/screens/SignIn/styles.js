@@ -7,9 +7,10 @@ export const Container = styled.View`
 `;
 
 export const Title = styled.Text`
-  font-size: 28px;
+  font-size: 32px;
+  font-family: Lobster-Regular;
   color: #1E319D;
-  margin: 60px 0;
+  margin: 80px 0 40px;
 `;
 
 export const Content = styled.View`
@@ -20,7 +21,7 @@ export const Content = styled.View`
 export const ContentDescription = styled.Text`
   font-size: 14px;
   color: #444;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 `;
 
 export const SignInButton = styled.TouchableOpacity`
@@ -53,4 +54,21 @@ export const SocialButtons = styled.View`
   flex-direction: row;
   width: 100%;
   justify-content: space-around
+`;
+
+export const Footer = styled.TouchableOpacity`
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 40px;
+`;
+
+export const FooterText = styled.Text`
+  color: #444466aa;
+`;
+
+export const FooterTextBold = styled.Text`
+  font-weight: bold;
+  color: #1E319D;
 `;
