@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
+import auth from '@react-native-firebase/auth';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { 
@@ -18,12 +20,36 @@ import {
 
 import InputSign from '../../components/InputSign';
 import SocialButton from '../../components/SocialButton';
+import { Alert } from 'react-native';
 
 function SignIn() {
+  const navigation = useNavigation();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+
+  function handleSubmitLogin() {
+    if (!email && !password) return;
+
+    try {
+      auth().signInWithEmailAndPassword(email, password)
+        .then(({ user }) => {
+          Alert.alert('Logged In');
+          
+          navigation.reset({
+            routes: [{ name: 'Main' }]
+          });
+        })
+        .catch(error => {
+          Alert.alert('Ops ');
+          console.log(error);
+        });
+    } catch (error) {
+      Alert.alert('Network error');
+    }
+  }
 
   return (
     <Container>
@@ -56,7 +82,7 @@ function SignIn() {
           secureTextEntry={!isPasswordVisible}
         />
 
-        <SignInButton onPress={() => {}}>
+        <SignInButton onPress={handleSubmitLogin}>
           <SignInButtonText>Sign In</SignInButtonText>
         </SignInButton>
       </Content>

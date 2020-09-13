@@ -1,6 +1,7 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
 
+import { UserProvider } from './src/store/UserContext';
 import Routes from './src/routes';
 
 function App() {
@@ -11,7 +12,10 @@ function App() {
         barStyle="dark-content" 
         translucent={true} 
       />
-      <Routes />
+
+      <UserProvider>
+        <Routes />
+      </UserProvider>
     </>
   );
 }
