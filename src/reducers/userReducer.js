@@ -1,5 +1,9 @@
 export const initialState = {
-  user: {},
+  user: {
+    avatar: '',
+    name: '',
+    email: ''
+  },
   auth: false
 };
 

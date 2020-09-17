@@ -29,8 +29,8 @@ function Main() {
 
   return (
     <Container>
-      <Avatar source={{ uri: userState.user.photoURL }} />
-      <UserName>{userState.user.displayName}</UserName>
+      <Avatar source={{ uri: userState.user.avatar }} />
+      <UserName>{userState.user.name}</UserName>
       <UserEmail>{userState.user.email}</UserEmail>
 
       <SignOutButton onPress={signOut}>

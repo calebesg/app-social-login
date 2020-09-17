@@ -22,7 +22,9 @@ import {
 import { UserContext } from '../../contexts/userContext';
 
 import InputSign from '../../components/InputSign';
-import SocialButton from '../../components/SocialButton';
+import GoogleSignIn from '../../components/GoogleSignIn';
+import FacebookSignIn from '../../components/FacebookSignIn';
+import TwitterSignIn from '../../components/TwitterSignIn';
 import LoadingIcon from '../../components/LoadingIcon';
 
 function SignIn() {
@@ -49,7 +51,11 @@ function SignIn() {
         useDispatch({
           type: 'SIGN_IN',
           payload: {
-            user,
+            user: {
+              avatar: user.photoURL,
+              name: user.displayName,
+              email: user.email
+            },
             auth: true
           }
         });
@@ -106,16 +112,11 @@ function SignIn() {
 
       <SocialSignIn>
         <SocialSignInText>Or sign in with</SocialSignInText>
+
         <SocialButtons>
-          <SocialButton>
-            <Icon name="google" size={32} color="#CF2C1F" />
-          </SocialButton>
-          <SocialButton>
-            <Icon name="facebook" size={32} color="#395693" />
-          </SocialButton>
-          <SocialButton>
-            <Icon name="twitter" size={32} color="#1C9CEB" />
-          </SocialButton>
+          <GoogleSignIn />
+          <FacebookSignIn />
+          <TwitterSignIn />
         </SocialButtons>
       </SocialSignIn>
 
