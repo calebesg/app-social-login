@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { StatusBar } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
@@ -12,7 +12,7 @@ function Preload() {
       navigation.reset({
         routes: [{ name: 'SignIn' }]
       });
-    }, 3000);
+    }, 2000);
   }, []);
 
   return (

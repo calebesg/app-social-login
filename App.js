@@ -1,7 +1,7 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
 
-import { UserProvider } from './src/store/UserContext';
+import { UserProvider } from './src/contexts/userContext';
 import Routes from './src/routes';
 
 function App() {

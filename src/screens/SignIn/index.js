@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import auth from '@react-native-firebase/auth';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -18,32 +19,44 @@ import {
   FooterTextBold
 } from './styles';
 
+import { UserContext } from '../../contexts/userContext';
+
 import InputSign from '../../components/InputSign';
 import SocialButton from '../../components/SocialButton';
-import { Alert } from 'react-native';
 
 function SignIn() {
-  const navigation = useNavigation();
+  const { state: userState, dispatch: useDispatch } = useContext(UserContext);
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const navigation = useNavigation();
+
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   function handleSubmitLogin() {
-    if (!email && !password) return;
+    if (!email && !password) {
+      return Alert.alert('Fill in all fields');
+    }
 
     try {
       auth().signInWithEmailAndPassword(email, password)
         .then(({ user }) => {
-          Alert.alert('Logged In');
-          
+          useDispatch({
+            type: 'SIGN_IN',
+            payload: {
+              user,
+              auth: true
+            }
+          });
+
           navigation.reset({
             routes: [{ name: 'Main' }]
           });
         })
         .catch(error => {
-          Alert.alert('Ops ');
+          Alert.alert('Email or password invalid');
+
           console.log(error);
         });
     } catch (error) {
