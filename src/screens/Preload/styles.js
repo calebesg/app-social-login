@@ -12,10 +12,3 @@ export const Logo = styled.Text`
   font-family: Lobster-Regular;
   color: #FFF;
 `;
-
-export const LoadingIcon = styled.ActivityIndicator.attrs({
-  size: 'large',
-  color: '#fff'
-})`
-  margin-top: 50px;
-`;

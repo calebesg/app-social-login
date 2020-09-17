@@ -23,9 +23,10 @@ import { UserContext } from '../../contexts/userContext';
 
 import InputSign from '../../components/InputSign';
 import SocialButton from '../../components/SocialButton';
+import LoadingIcon from '../../components/LoadingIcon';
 
 function SignIn() {
-  const { state: userState, dispatch: useDispatch } = useContext(UserContext);
+  const { dispatch: useDispatch } = useContext(UserContext);
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -33,35 +34,35 @@ function SignIn() {
   const navigation = useNavigation();
 
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   function handleSubmitLogin() {
-    if (!email && !password) {
+    if (!email || !password) {
       return Alert.alert('Fill in all fields');
     }
 
-    try {
-      auth().signInWithEmailAndPassword(email, password)
-        .then(({ user }) => {
-          useDispatch({
-            type: 'SIGN_IN',
-            payload: {
-              user,
-              auth: true
-            }
-          });
+    setIsLoading(true);
 
-          navigation.reset({
-            routes: [{ name: 'Main' }]
-          });
-        })
-        .catch(error => {
-          Alert.alert('Email or password invalid');
-
-          console.log(error);
+    auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(({ user }) => {
+        useDispatch({
+          type: 'SIGN_IN',
+          payload: {
+            user,
+            auth: true
+          }
         });
-    } catch (error) {
-      Alert.alert('Network error');
-    }
+
+        navigation.reset({
+          routes: [{ name: 'Main' }]
+        });
+      })
+      .catch(error => {
+        Alert.alert('Email or password invalid');
+
+        setIsLoading(false);
+      });
   }
 
   return (
@@ -96,7 +97,10 @@ function SignIn() {
         />
 
         <SignInButton onPress={handleSubmitLogin}>
-          <SignInButtonText>Sign In</SignInButtonText>
+          {isLoading 
+            ? <LoadingIcon />
+            : <SignInButtonText>Sign In</SignInButtonText>
+          }
         </SignInButton>
       </Content>
 

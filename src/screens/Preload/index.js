@@ -2,7 +2,8 @@ import React, { useEffect, useContext } from 'react';
 import { StatusBar } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import { Container, Logo, LoadingIcon } from './styles';
+import { Container, Logo } from './styles';
+import LoadingIcon from '../../components/LoadingIcon';
 
 function Preload() {
   const navigation = useNavigation();
