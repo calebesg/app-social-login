@@ -15,7 +15,7 @@ export const Title = styled.Text`
 
 export const Content = styled.View`
   width: 100%;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 `;
 
 export const ContentDescription = styled.Text`
@@ -54,9 +54,8 @@ export const SocialSignInText = styled.Text`
 `;
 
 export const SocialButtons = styled.View`
-  flex-direction: row;
   width: 100%;
-  justify-content: space-around
+  padding: 0 8px;
 `;
 
 export const Footer = styled.TouchableOpacity.attrs({

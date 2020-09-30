@@ -23,7 +23,6 @@ import { UserContext } from '../../contexts/userContext';
 
 import InputSign from '../../components/InputSign';
 import GoogleSignIn from '../../components/GoogleSignIn';
-import FacebookSignIn from '../../components/FacebookSignIn';
 import TwitterSignIn from '../../components/TwitterSignIn';
 import LoadingIcon from '../../components/LoadingIcon';
 
@@ -115,7 +114,6 @@ function SignIn() {
 
         <SocialButtons>
           <GoogleSignIn />
-          <FacebookSignIn />
           <TwitterSignIn />
         </SocialButtons>
       </SocialSignIn>

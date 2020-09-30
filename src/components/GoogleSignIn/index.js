@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { UserContext } from '../../contexts/userContext';
 
-import GoogleButton from './styles';
+import GoogleButton, { GoogleButtonText } from './styles';
 
 GoogleSignin.configure({
   webClientId: '14821454159-d2jno5kedipqjgcd438gh8ns9j1625m3.apps.googleusercontent.com',
@@ -46,7 +46,8 @@ function GoogleSignIn() {
 
   return (
     <GoogleButton onPress={onGoogleButtonPress}>
-      <Icon name="google" size={32} color="#CF2C1F" />
+      <Icon name="google" size={24} color="#CF2C1Fcc" />
+      <GoogleButtonText>Google</GoogleButtonText>
     </GoogleButton>
   );
 }
