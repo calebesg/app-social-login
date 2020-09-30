@@ -46,8 +46,8 @@ function GoogleSignIn() {
 
   return (
     <GoogleButton onPress={onGoogleButtonPress}>
-      <Icon name="google" size={24} color="#CF2C1Fcc" />
-      <GoogleButtonText>Google</GoogleButtonText>
+      <Icon name="google" size={24} color="#ea4335" />
+      <GoogleButtonText>Sign in with Google</GoogleButtonText>
     </GoogleButton>
   );
 }

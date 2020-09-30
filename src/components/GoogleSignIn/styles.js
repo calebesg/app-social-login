@@ -11,8 +11,8 @@ const GoogleButton = styled.TouchableOpacity.attrs({
 
   border-radius: 8px;
   border-bottom-width: 2px;
-  border-color: #CF2C1Fcc;
-  background: #fafafc;
+  border-color: #ea4335;
+  background: #fff;
   padding: 0 16px;
 
   margin-bottom: 16px;
@@ -20,8 +20,7 @@ const GoogleButton = styled.TouchableOpacity.attrs({
 
 export const GoogleButtonText = styled.Text`
   flex: 1;
-  font-weight: bold;
-  color: #CF2C1Fcc;
+  color: #606073;
   text-align: center;
 `;
 

@@ -15,7 +15,7 @@ function Routes() {
         screenOptions={{
           headerShown: false,
           cardStyle: {
-            backgroundColor: '#ffffff',
+            backgroundColor: '#fafafc',
           }
         }}
       >

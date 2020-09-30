@@ -23,7 +23,7 @@ import { UserContext } from '../../contexts/userContext';
 
 import InputSign from '../../components/InputSign';
 import GoogleSignIn from '../../components/GoogleSignIn';
-import TwitterSignIn from '../../components/TwitterSignIn';
+import FacebookSignIn from '../../components/FacebookSignIn';
 import LoadingIcon from '../../components/LoadingIcon';
 
 function SignIn() {
@@ -110,11 +110,11 @@ function SignIn() {
       </Content>
 
       <SocialSignIn>
-        <SocialSignInText>Or sign in with</SocialSignInText>
+        <SocialSignInText>Or</SocialSignInText>
 
         <SocialButtons>
           <GoogleSignIn />
-          <TwitterSignIn />
+          <FacebookSignIn />
         </SocialButtons>
       </SocialSignIn>
 

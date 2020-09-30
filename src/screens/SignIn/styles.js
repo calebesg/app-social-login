@@ -50,7 +50,13 @@ export const SocialSignIn = styled.View`
 export const SocialSignInText = styled.Text`
   font-size: 13px;
   color: #606073;
-  margin-bottom: 32px;
+  font-weight: bold;
+  border-bottom-width: 1px;
+  border-color: #b1b1b877;
+  width: 200px;
+  text-align: center;
+  padding-bottom: 16px;
+  margin-bottom: 20px;
 `;
 
 export const SocialButtons = styled.View`

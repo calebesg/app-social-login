@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-const TwitterButton = styled.TouchableOpacity.attrs({
+const FacebookButton = styled.TouchableOpacity.attrs({
   activeOpacity: 0.6,
 })`
   height: 60px;
@@ -11,16 +11,15 @@ const TwitterButton = styled.TouchableOpacity.attrs({
 
   border-radius: 8px;
   border-bottom-width: 2px;
-  border-color: #1C9CEB;
-  background: #fafafc;
+  border-color: #3b5998;
+  background: #fff;
   padding: 0 16px;
 `;
 
-export const TwitterButtonText = styled.Text`
+export const FacebookButtonText = styled.Text`
   flex: 1;
-  font-weight: bold;
-  color: #1C9CEB;
+  color: #606073;
   text-align: center;
 `;
 
-export default TwitterButton;
+export default FacebookButton;
