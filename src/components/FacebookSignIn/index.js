@@ -2,10 +2,11 @@ import React, { useContext } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import auth from '@react-native-firebase/auth';
 import { LoginManager, AccessToken } from 'react-native-fbsdk';
-import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { UserContext } from '../../contexts/userContext';
 import authenticate from '../../utils/authenticate';
+
+import FacebookIcon from '../../assets/icons/facebook.svg';
 
 import FacebookButton, { FacebookButtonText } from './styles';
 
@@ -34,7 +35,7 @@ function FacebookSignIn() {
 
   return (
     <FacebookButton onPress={onFacebookButtonPress}>
-      <Icon name="facebook" size={24} color="#3b5998" />
+      <FacebookIcon width={24} height={24} />
       <FacebookButtonText>Sign in with Facebook</FacebookButtonText>
     </FacebookButton>
   );

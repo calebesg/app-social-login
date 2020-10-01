@@ -2,10 +2,11 @@ import React, { useContext } from 'react';
 import auth from '@react-native-firebase/auth';
 import { useNavigation } from '@react-navigation/native';
 import { GoogleSignin } from '@react-native-community/google-signin';
-import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { UserContext } from '../../contexts/userContext';
 import authenticate from '../../utils/authenticate';
+
+import GoogleIcon from '../../assets/icons/google.svg';
 
 import GoogleButton, { GoogleButtonText } from './styles';
 
@@ -28,7 +29,7 @@ function GoogleSignIn() {
 
   return (
     <GoogleButton onPress={onGoogleButtonPress}>
-      <Icon name="google" size={24} color="#ea4335" />
+      <GoogleIcon width={24}  height={24} />
       <GoogleButtonText>Sign in with Google</GoogleButtonText>
     </GoogleButton>
   );

@@ -61,7 +61,6 @@ export const SocialSignInText = styled.Text`
 
 export const SocialButtons = styled.View`
   width: 100%;
-  padding: 0 8px;
 `;
 
 export const Footer = styled.TouchableOpacity.attrs({

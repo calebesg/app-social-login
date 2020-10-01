@@ -18,8 +18,6 @@ function Preload() {
     async function exitAuthentication() {
       const data = await AsyncStorage.getItem('@auth');
 
-      console.log(data);
-
       if (!data) {
         return navigation.reset({
           routes: [{ name: 'SignIn' }]

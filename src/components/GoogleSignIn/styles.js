@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 const GoogleButton = styled.TouchableOpacity.attrs({
   activeOpacity: 0.6,
 })`
-  height: 60px;
+  height: 50px;
   width: 100%;
   flex-direction: row;
   justify-content: center;
