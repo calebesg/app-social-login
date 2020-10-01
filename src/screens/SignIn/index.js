@@ -27,7 +27,7 @@ import FacebookSignIn from '../../components/FacebookSignIn';
 import LoadingIcon from '../../components/LoadingIcon';
 
 function SignIn() {
-  const { dispatch: useDispatch } = useContext(UserContext);
+  const { dispatch: userDispatch } = useContext(UserContext);
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -47,7 +47,7 @@ function SignIn() {
     auth()
       .signInWithEmailAndPassword(email, password)
       .then(({ user }) => {
-        useDispatch({
+        userDispatch({
           type: 'SIGN_IN',
           payload: {
             user: {

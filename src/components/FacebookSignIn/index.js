@@ -8,6 +8,8 @@ import { UserContext } from '../../contexts/userContext';
 
 import FacebookButton, { FacebookButtonText } from './styles';
 
+import authentication from '../../utils/authentication';
+
 function FacebookSignIn() {
   const { dispatch: userDispatch } = useContext(UserContext);
 
@@ -28,26 +30,7 @@ function FacebookSignIn() {
 
     const credential = auth.FacebookAuthProvider.credential(data.accessToken);
 
-    auth()
-      .signInWithCredential(credential)
-      .then(({ user }) => {
-        userDispatch({
-          type: 'SIGN_IN',
-          payload: {
-            user: {
-              avatar: user.photoURL,
-              name: user.displayName,
-              email: user.email
-            },
-            auth: true
-          }
-        });
-
-        navigation.reset({
-          routes: [{ name: 'Main' }]
-        });
-      })
-      .catch(error => console.log(error));
+    authentication(credential, userDispatch, navigation);
   }
 
   return (

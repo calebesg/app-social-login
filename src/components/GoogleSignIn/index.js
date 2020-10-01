@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
-import { useNavigation } from '@react-navigation/native';
 import auth from '@react-native-firebase/auth';
+import { useNavigation } from '@react-navigation/native';
 import { GoogleSignin } from '@react-native-community/google-signin';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { UserContext } from '../../contexts/userContext';
+
+import authentication from '../../utils/authentication';
 
 import GoogleButton, { GoogleButtonText } from './styles';
 
@@ -22,26 +24,7 @@ function GoogleSignIn() {
 
     const credential = auth.GoogleAuthProvider.credential(idToken);
 
-    auth()
-      .signInWithCredential(credential)
-      .then(({ user }) => {
-        userDispatch({
-          type: 'SIGN_IN',
-          payload: {
-            user: {
-              avatar: user.photoURL,
-              name: user.displayName,
-              email: user.email
-            },
-            auth: true
-          }
-        });
-
-        navigation.reset({
-          routes: [{ name: 'Main' }]
-        });
-      })
-      .catch(error => console.log('Authentication failure: ' + error));
+    authentication(credential, userDispatch, navigation);
   }
 
   return (
