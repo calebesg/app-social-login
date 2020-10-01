@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
-import { Alert } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 import { useNavigation } from '@react-navigation/native';
-import auth from '@react-native-firebase/auth';
 
 import { UserContext } from '../../contexts/userContext';
 
@@ -19,8 +18,10 @@ function Main() {
 
   const navigation = useNavigation();
 
-  function signOut() {
+  async function signOut() {
     userDispatch({ type: 'SIGN_OUT' });
+
+    await AsyncStorage.removeItem('@auth');
 
     navigation.reset({
       routes: [{ name: 'SignIn' }]
