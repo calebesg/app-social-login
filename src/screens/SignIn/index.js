@@ -20,6 +20,7 @@ import {
 } from './styles';
 
 import { UserContext } from '../../contexts/userContext';
+import { saveCredential } from '../../utils/authenticate';
 
 import InputSign from '../../components/InputSign';
 import GoogleSignIn from '../../components/GoogleSignIn';
@@ -44,9 +45,13 @@ function SignIn() {
 
     setIsLoading(true);
 
+    const credential = auth.EmailAuthProvider.credential(email, password);
+
     auth()
-      .signInWithEmailAndPassword(email, password)
+      .signInWithCredential(credential)
       .then(({ user }) => {
+        saveCredential(credential);
+
         userDispatch({
           type: 'SIGN_IN',
           payload: {

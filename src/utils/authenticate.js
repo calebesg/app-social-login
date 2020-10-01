@@ -1,10 +1,17 @@
 import auth from '@react-native-firebase/auth';
+import AsyncStorage from '@react-native-community/async-storage';
 
-function authentication(credential, userDispatch, navigation) {
+export async function saveCredential(credential) {
+  await AsyncStorage.setItem('@auth', JSON.stringify(credential));
+}
 
+export default function authenticate(credential, userDispatch, navigation) {
   auth()
     .signInWithCredential(credential)
     .then(({ user }) => {
+      
+      saveCredential(credential);
+      
       userDispatch({
         type: 'SIGN_IN',
         payload: {
@@ -23,5 +30,3 @@ function authentication(credential, userDispatch, navigation) {
     })
     .catch(error => console.log(error));
 }
-
-export default authentication;

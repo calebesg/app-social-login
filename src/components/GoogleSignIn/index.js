@@ -5,8 +5,7 @@ import { GoogleSignin } from '@react-native-community/google-signin';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { UserContext } from '../../contexts/userContext';
-
-import authentication from '../../utils/authentication';
+import authenticate from '../../utils/authenticate';
 
 import GoogleButton, { GoogleButtonText } from './styles';
 
@@ -24,7 +23,7 @@ function GoogleSignIn() {
 
     const credential = auth.GoogleAuthProvider.credential(idToken);
 
-    authentication(credential, userDispatch, navigation);
+    authenticate(credential, userDispatch, navigation);
   }
 
   return (

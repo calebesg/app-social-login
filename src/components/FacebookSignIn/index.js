@@ -5,10 +5,9 @@ import { LoginManager, AccessToken } from 'react-native-fbsdk';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { UserContext } from '../../contexts/userContext';
+import authenticate from '../../utils/authenticate';
 
 import FacebookButton, { FacebookButtonText } from './styles';
-
-import authentication from '../../utils/authentication';
 
 function FacebookSignIn() {
   const { dispatch: userDispatch } = useContext(UserContext);
@@ -30,7 +29,7 @@ function FacebookSignIn() {
 
     const credential = auth.FacebookAuthProvider.credential(data.accessToken);
 
-    authentication(credential, userDispatch, navigation);
+    authenticate(credential, userDispatch, navigation);
   }
 
   return (
