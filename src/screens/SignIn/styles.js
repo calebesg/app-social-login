@@ -28,7 +28,7 @@ export const SignInButton = styled.TouchableOpacity.attrs({
   activeOpacity: 0.8
 })`
   background-color: #1E319D;
-  height: 60px;
+  height: 50px;
   border-radius: 8px;
   margin-top: 24px;
   justify-content: center;
@@ -56,7 +56,7 @@ export const SocialSignInText = styled.Text`
   width: 200px;
   text-align: center;
   padding-bottom: 16px;
-  margin-bottom: 20px;
+  margin-bottom: 32px;
 `;
 
 export const SocialButtons = styled.View`
